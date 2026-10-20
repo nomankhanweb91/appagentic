@@ -58,20 +58,20 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onRequestQuote }) => {
       <div className="absolute top-1/4 left-1/2 -translate-x-1/2 w-[750px] h-[550px] bg-indigo-500/25 rounded-full blur-3xl pointer-events-none" />
       <div className="absolute -top-24 -right-24 w-96 h-96 bg-purple-500/20 rounded-full blur-2xl pointer-events-none" />
 
-      {/* Main Content Container */}
-      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-20 pb-16 lg:pt-28 lg:pb-24">
+      {/* Main Content Container - 100% Full Width */}
+      <div className="relative z-10 w-full px-4 sm:px-6 lg:px-8 xl:px-12 pt-16 pb-10 lg:pt-24 lg:pb-14">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
-          className="max-w-3xl"
+          className="max-w-4xl"
         >
           {/* Pill Badge */}
           <motion.div
             initial={{ opacity: 0, scale: 0.9 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ delay: 0.2, duration: 0.5 }}
-            className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-slate-900/60 border border-white/20 backdrop-blur-md mb-8 shadow-sm"
+            className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-slate-900/60 border border-white/20 backdrop-blur-md mb-6 sm:mb-8 shadow-sm"
           >
             <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
             <span className="text-xs font-semibold tracking-wider text-slate-100 uppercase">
@@ -79,12 +79,12 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onRequestQuote }) => {
             </span>
           </motion.div>
 
-          {/* Headline */}
+          {/* Headline - refined and slightly smaller font */}
           <motion.h1
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.3, duration: 0.7 }}
-            className="text-4xl sm:text-6xl lg:text-7xl font-extrabold tracking-tight text-white leading-[1.08] mb-6"
+            className="text-3xl sm:text-5xl lg:text-[54px] font-extrabold tracking-tight text-white leading-[1.12] mb-5"
           >
             Build Smarter Products.{' '}
             <span className="block text-white/95">Engineer What's Next.</span>
@@ -171,12 +171,12 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onRequestQuote }) => {
             ref={scrollContainerRef}
             className="w-full overflow-x-auto no-scrollbar scroll-smooth cursor-grab active:cursor-grabbing px-2 sm:px-4"
           >
-            <div className="animate-marquee flex items-center gap-6">
+            <div className="animate-marquee flex items-center gap-4 sm:gap-5">
               {/* Loop 1 */}
               {partnerLogos.map((item, idx) => (
                 <div
                   key={`loop-1-${idx}`}
-                  className="bg-white rounded-2xl px-8 flex items-center justify-center shadow-lg h-24 sm:h-28 min-w-[240px] sm:min-w-[260px] shrink-0 hover:scale-[1.04] transition-transform duration-200"
+                  className="bg-white rounded-xl sm:rounded-2xl px-5 sm:px-6 flex items-center justify-center shadow-md h-16 sm:h-20 min-w-[170px] sm:min-w-[200px] shrink-0 hover:scale-[1.03] transition-transform duration-200"
                 >
                   {item.component}
                 </div>
@@ -185,7 +185,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onRequestQuote }) => {
               {partnerLogos.map((item, idx) => (
                 <div
                   key={`loop-2-${idx}`}
-                  className="bg-white rounded-2xl px-8 flex items-center justify-center shadow-lg h-24 sm:h-28 min-w-[240px] sm:min-w-[260px] shrink-0 hover:scale-[1.04] transition-transform duration-200"
+                  className="bg-white rounded-xl sm:rounded-2xl px-5 sm:px-6 flex items-center justify-center shadow-md h-16 sm:h-20 min-w-[170px] sm:min-w-[200px] shrink-0 hover:scale-[1.03] transition-transform duration-200"
                 >
                   {item.component}
                 </div>
@@ -194,7 +194,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onRequestQuote }) => {
               {partnerLogos.map((item, idx) => (
                 <div
                   key={`loop-3-${idx}`}
-                  className="bg-white rounded-2xl px-8 flex items-center justify-center shadow-lg h-24 sm:h-28 min-w-[240px] sm:min-w-[260px] shrink-0 hover:scale-[1.04] transition-transform duration-200"
+                  className="bg-white rounded-xl sm:rounded-2xl px-5 sm:px-6 flex items-center justify-center shadow-md h-16 sm:h-20 min-w-[170px] sm:min-w-[200px] shrink-0 hover:scale-[1.03] transition-transform duration-200"
                 >
                   {item.component}
                 </div>
