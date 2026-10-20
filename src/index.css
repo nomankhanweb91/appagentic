@@ -1,0 +1,42 @@
+@import "tailwindcss";
+
+@layer utilities {
+  .text-gradient-coral-purple {
+    background: linear-gradient(135deg, #FF5722 0%, #E91E63 50%, #9C27B0 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+  
+  .text-gradient-purple-pink {
+    background: linear-gradient(135deg, #EC4899 0%, #8B5CF6 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
+  .bg-gradient-accent-btn {
+    background: linear-gradient(90deg, #FF6B4A 0%, #EC4899 50%, #8B5CF6 100%);
+  }
+
+  .bg-gradient-peach-purple {
+    background: linear-gradient(90deg, #FED7AA 0%, #FBCFE8 50%, #E9D5FF 100%);
+  }
+
+  .glow-border {
+    box-shadow: 0 0 20px -5px rgba(168, 85, 247, 0.25);
+  }
+}
+
+@keyframes marquee {
+  0% { transform: translateX(0%); }
+  100% { transform: translateX(-50%); }
+}
+
+.animate-marquee {
+  display: flex;
+  width: max-content;
+  animation: marquee 35s linear infinite;
+}
+
+.animate-marquee:hover {
+  animation-play-state: paused;
+}
