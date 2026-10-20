@@ -277,7 +277,7 @@ export const Navbar: React.FC<NavbarProps> = ({ onRequestQuote }) => {
       <AnimatePresence>
         {activeDropdown && megaMenus[activeDropdown] && (
           <div
-            className="absolute top-full left-0 right-0 pt-2 pb-8 z-50 pointer-events-auto"
+            className="absolute top-full left-0 right-0 w-full z-50 pointer-events-auto"
             onMouseEnter={() => {
               if (leaveTimerRef.current) {
                 clearTimeout(leaveTimerRef.current);
@@ -288,7 +288,7 @@ export const Navbar: React.FC<NavbarProps> = ({ onRequestQuote }) => {
           >
             {/* Background click overlay */}
             <div
-              className="fixed inset-0 -z-10 bg-slate-950/20 backdrop-blur-xs transition-opacity duration-200"
+              className="fixed inset-0 top-20 -z-10 bg-slate-950/20 backdrop-blur-xs transition-opacity duration-200"
               onClick={() => setActiveDropdown(null)}
             />
             <MegaMenuPanel
