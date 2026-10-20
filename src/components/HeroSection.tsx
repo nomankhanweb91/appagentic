@@ -125,45 +125,51 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onRequestQuote }) => {
             </a>
           </motion.div>
         </motion.div>
+      </div>
 
-        {/* Bottom Social Proof Bar with Higher Height and Scrollable / Marquee Functionality */}
-        <div className="mt-20 pt-10 border-t border-white/15">
-          <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-6">
-            <div>
-              <p className="text-xl sm:text-2xl font-bold text-white tracking-tight">
-                Trusted, Certified & Recognized Globally
-              </p>
-              <p className="text-xs text-white/70 mt-1">
-                Strategic technology alliances and enterprise validation standards
-              </p>
-            </div>
-            
-            {/* Scroll navigation controls for mobile & desktop */}
-            <div className="flex items-center gap-2">
-              <span className="text-xs text-white/60 font-medium hidden sm:inline mr-2">
-                Scroll or swipe horizontally ⟷
-              </span>
-              <button
-                onClick={handleScrollLeft}
-                aria-label="Scroll logos left"
-                className="w-8 h-8 rounded-full bg-white/10 hover:bg-white/20 border border-white/20 flex items-center justify-center text-white transition-colors cursor-pointer"
-              >
-                ‹
-              </button>
-              <button
-                onClick={handleScrollRight}
-                aria-label="Scroll logos right"
-                className="w-8 h-8 rounded-full bg-white/10 hover:bg-white/20 border border-white/20 flex items-center justify-center text-white transition-colors cursor-pointer"
-              >
-                ›
-              </button>
-            </div>
+      {/* Bottom Social Proof Bar - 100% Full Width across the entire screen */}
+      <div className="relative z-10 w-full mt-10 sm:mt-14 pt-8 border-t border-white/15 pb-16 lg:pb-20">
+        <div className="w-full px-4 sm:px-6 lg:px-8 xl:px-12 flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-6">
+          <div>
+            <p className="text-xl sm:text-2xl font-bold text-white tracking-tight">
+              Trusted, Certified & Recognized Globally
+            </p>
+            <p className="text-xs text-white/70 mt-1">
+              Strategic technology alliances and enterprise validation standards
+            </p>
           </div>
+          
+          {/* Scroll navigation controls for mobile & desktop */}
+          <div className="flex items-center gap-2">
+            <span className="text-xs text-white/60 font-medium hidden sm:inline mr-2">
+              Scroll or swipe horizontally ⟷
+            </span>
+            <button
+              onClick={handleScrollLeft}
+              aria-label="Scroll logos left"
+              className="w-8 h-8 rounded-full bg-white/10 hover:bg-white/20 border border-white/20 flex items-center justify-center text-white transition-colors cursor-pointer"
+            >
+              ‹
+            </button>
+            <button
+              onClick={handleScrollRight}
+              aria-label="Scroll logos right"
+              className="w-8 h-8 rounded-full bg-white/10 hover:bg-white/20 border border-white/20 flex items-center justify-center text-white transition-colors cursor-pointer"
+            >
+              ›
+            </button>
+          </div>
+        </div>
 
-          {/* Infinite Scrollable & Marquee Logo Track with increased height (h-24 sm:h-28 / min-w-[250px]) */}
+        {/* 100% Full Width Infinite Scrollable & Marquee Logo Track */}
+        <div className="relative w-full overflow-hidden py-2">
+          {/* Edge gradients for smooth infinite scroll appearance */}
+          <div className="pointer-events-none absolute left-0 top-0 bottom-0 w-10 sm:w-24 bg-gradient-to-r from-[#0F172A]/90 to-transparent z-10" />
+          <div className="pointer-events-none absolute right-0 top-0 bottom-0 w-10 sm:w-24 bg-gradient-to-l from-[#0F172A]/90 to-transparent z-10" />
+
           <div 
             ref={scrollContainerRef}
-            className="relative w-full overflow-x-auto no-scrollbar py-2 scroll-smooth cursor-grab active:cursor-grabbing"
+            className="w-full overflow-x-auto no-scrollbar scroll-smooth cursor-grab active:cursor-grabbing px-2 sm:px-4"
           >
             <div className="animate-marquee flex items-center gap-6">
               {/* Loop 1 */}
