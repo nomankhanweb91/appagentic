@@ -726,6 +726,36 @@ export const TESTIMONIALS_DATA = [
     company: 'healthcare technology company',
     initials: 'VP',
     color: 'border-indigo-500 text-indigo-600'
+  },
+  {
+    id: 'test-4',
+    category: 'Retail & eCommerce',
+    categoryTheme: 'text-rose-700 bg-rose-50 border-rose-200',
+    quote: '“The multi-agent recommendation engine Appagentix integrated into our catalog drove a 34% increase in cart conversion within 6 weeks. Their team is exceptionally sharp on real-time vector search.”',
+    author: 'Head of Engineering',
+    company: 'omnichannel retail group',
+    initials: 'HE',
+    color: 'border-rose-500 text-rose-600'
+  },
+  {
+    id: 'test-5',
+    category: 'Manufacturing',
+    categoryTheme: 'text-emerald-700 bg-emerald-50 border-emerald-200',
+    quote: '“Deploying edge computer vision across our assembly lines reduced manual inspection defects by 62%. True full-stack engineering from hardware protocols to cloud analytics.”',
+    author: 'Director of Systems',
+    company: 'precision industrial enterprise',
+    initials: 'DS',
+    color: 'border-emerald-500 text-emerald-600'
+  },
+  {
+    id: 'test-6',
+    category: 'EdTech & AI',
+    categoryTheme: 'text-blue-700 bg-blue-50 border-blue-200',
+    quote: '“Building an adaptive learning platform with sub-second AI voice synthesis was deemed too ambitious for an 8-week timeline until Appagentix took over. Shipped exactly on schedule with zero drama.”',
+    author: 'Co-Founder & CEO',
+    company: 'nextgen edtech startup',
+    initials: 'CF',
+    color: 'border-blue-500 text-blue-600'
   }
 ];
 

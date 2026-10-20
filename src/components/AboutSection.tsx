@@ -1,5 +1,6 @@
 import React from 'react';
 import { ArrowRight, Sparkles } from 'lucide-react';
+import { motion } from 'motion/react';
 
 interface AboutSectionProps {
   onGetStarted: () => void;
@@ -7,11 +8,24 @@ interface AboutSectionProps {
 
 export const AboutSection: React.FC<AboutSectionProps> = ({ onGetStarted }) => {
   return (
-    <section id="about" className="py-20 lg:py-28 bg-white relative overflow-hidden">
+    <motion.section
+      id="about"
+      initial={{ opacity: 0, y: 50 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true, margin: '-80px' }}
+      transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
+      className="py-20 lg:py-28 bg-white relative overflow-hidden"
+    >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-start">
           {/* Left Column */}
-          <div className="lg:col-span-7 space-y-8">
+          <motion.div
+            initial={{ opacity: 0, x: -30 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.7 }}
+            className="lg:col-span-7 space-y-8"
+          >
             <div className="text-xs font-bold tracking-wider text-slate-500 uppercase">
               ABOUT APPAGENTIX
             </div>
@@ -82,19 +96,28 @@ export const AboutSection: React.FC<AboutSectionProps> = ({ onGetStarted }) => {
             <div className="pt-2">
               <button
                 onClick={onGetStarted}
-                className="inline-flex items-center gap-2 px-6 py-3 rounded-xl text-sm font-semibold text-slate-900 bg-gradient-to-r from-orange-100 via-pink-100 to-purple-100 hover:from-orange-200 hover:to-purple-200 transition-all border border-pink-200/60 shadow-sm"
+                className="inline-flex items-center gap-2 px-6 py-3 rounded-xl text-sm font-semibold text-slate-900 bg-gradient-to-r from-orange-100 via-pink-100 to-purple-100 hover:from-orange-200 hover:to-purple-200 transition-all border border-pink-200/60 shadow-sm cursor-pointer hover:scale-[1.02] active:scale-[0.98]"
               >
                 <span>Get Started</span>
                 <ArrowRight className="w-4 h-4 text-purple-700" />
               </button>
             </div>
-          </div>
+          </motion.div>
 
           {/* Right Column: 2x2 Metric Cards + Dark Statement Card */}
-          <div className="lg:col-span-5 space-y-6">
+          <motion.div
+            initial={{ opacity: 0, x: 30 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.7, delay: 0.2 }}
+            className="lg:col-span-5 space-y-6"
+          >
             <div className="grid grid-cols-2 gap-4 sm:gap-6">
               {/* Stat 1 */}
-              <div className="bg-white rounded-3xl p-6 sm:p-8 border border-slate-200/80 shadow-sm">
+              <motion.div
+                whileHover={{ y: -4 }}
+                className="bg-white rounded-3xl p-6 sm:p-8 border border-slate-200/80 shadow-sm transition-all"
+              >
                 <div className="text-4xl sm:text-5xl font-black text-slate-900 mb-2">
                   7+
                 </div>
@@ -102,10 +125,13 @@ export const AboutSection: React.FC<AboutSectionProps> = ({ onGetStarted }) => {
                 <div className="text-xs sm:text-sm font-medium text-slate-600">
                   Years building software
                 </div>
-              </div>
+              </motion.div>
 
               {/* Stat 2 */}
-              <div className="bg-white rounded-3xl p-6 sm:p-8 border border-slate-200/80 shadow-sm">
+              <motion.div
+                whileHover={{ y: -4 }}
+                className="bg-white rounded-3xl p-6 sm:p-8 border border-slate-200/80 shadow-sm transition-all"
+              >
                 <div className="text-4xl sm:text-5xl font-black text-slate-900 mb-2">
                   110+
                 </div>
@@ -113,10 +139,13 @@ export const AboutSection: React.FC<AboutSectionProps> = ({ onGetStarted }) => {
                 <div className="text-xs sm:text-sm font-medium text-slate-600">
                   Products delivered
                 </div>
-              </div>
+              </motion.div>
 
               {/* Stat 3 */}
-              <div className="bg-white rounded-3xl p-6 sm:p-8 border border-slate-200/80 shadow-sm">
+              <motion.div
+                whileHover={{ y: -4 }}
+                className="bg-white rounded-3xl p-6 sm:p-8 border border-slate-200/80 shadow-sm transition-all"
+              >
                 <div className="text-4xl sm:text-5xl font-black text-slate-900 mb-2">
                   100+
                 </div>
@@ -124,10 +153,13 @@ export const AboutSection: React.FC<AboutSectionProps> = ({ onGetStarted }) => {
                 <div className="text-xs sm:text-sm font-medium text-slate-600">
                   Engineers, designers and architects
                 </div>
-              </div>
+              </motion.div>
 
               {/* Stat 4 */}
-              <div className="bg-white rounded-3xl p-6 sm:p-8 border border-slate-200/80 shadow-sm">
+              <motion.div
+                whileHover={{ y: -4 }}
+                className="bg-white rounded-3xl p-6 sm:p-8 border border-slate-200/80 shadow-sm transition-all"
+              >
                 <div className="text-4xl sm:text-5xl font-black text-slate-900 mb-2">
                   10+
                 </div>
@@ -135,11 +167,14 @@ export const AboutSection: React.FC<AboutSectionProps> = ({ onGetStarted }) => {
                 <div className="text-xs sm:text-sm font-medium text-slate-600">
                   Industries served
                 </div>
-              </div>
+              </motion.div>
             </div>
 
             {/* Dark Luminous Card */}
-            <div className="bg-[#0C0819] rounded-3xl p-8 text-white relative overflow-hidden shadow-xl border border-slate-800">
+            <motion.div
+              whileHover={{ scale: 1.01 }}
+              className="bg-[#0C0819] rounded-3xl p-8 text-white relative overflow-hidden shadow-xl border border-slate-800"
+            >
               <div className="flex items-center gap-1.5 text-pink-400 mb-3">
                 <Sparkles className="w-4 h-4 text-pink-400" />
                 <Sparkles className="w-3 h-3 text-purple-400" />
@@ -147,10 +182,10 @@ export const AboutSection: React.FC<AboutSectionProps> = ({ onGetStarted }) => {
               <p className="text-slate-200 text-sm sm:text-base leading-relaxed font-medium">
                 You own the code, the architecture, and every decision behind it. We stay accountable to all three, long after you go live.
               </p>
-            </div>
-          </div>
+            </motion.div>
+          </motion.div>
         </div>
       </div>
-    </section>
+    </motion.section>
   );
 };

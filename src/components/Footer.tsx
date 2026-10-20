@@ -1,5 +1,5 @@
 import React from 'react';
-import { AppagentixLogo, AwsPartnerLogo, Soc2Badge, Iso27001Badge, Iso9001Badge } from './BrandLogos';
+import { AppagentixWhiteLogo, AwsPartnerLogo, Soc2Badge, Iso27001Badge, Iso9001Badge } from './BrandLogos';
 import { ArrowRight, Lock, Facebook, Linkedin, Instagram, Youtube, Twitter } from 'lucide-react';
 
 interface FooterProps {
@@ -15,7 +15,7 @@ export const Footer: React.FC<FooterProps> = ({ onTalkToAiTeam, onViewCaseStudie
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 pb-16 border-b border-slate-800/80">
           {/* Brand Col */}
           <div className="lg:col-span-4 space-y-6">
-            <AppagentixLogo className="w-8 h-8" inverted />
+            <AppagentixWhiteLogo className="h-9 sm:h-11 w-auto object-contain max-w-[190px] sm:max-w-[240px]" />
 
             <h3 className="text-xl sm:text-2xl font-extrabold text-white leading-snug">
               Enterprise AI & Product Engineering Partner

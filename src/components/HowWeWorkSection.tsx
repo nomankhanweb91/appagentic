@@ -1,5 +1,6 @@
 import React from 'react';
 import { HOW_WE_WORK_STEPS } from '../data/content';
+import { motion } from 'motion/react';
 import {
   Compass,
   GitMerge,
@@ -35,13 +36,25 @@ export const HowWeWorkSection: React.FC = () => {
   const bottomRow = HOW_WE_WORK_STEPS.slice(4, 7);
 
   return (
-    <section className="py-24 lg:py-32 bg-[#0C0819] text-white relative overflow-hidden">
+    <motion.section
+      initial={{ opacity: 0, y: 50 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true, margin: "-80px" }}
+      transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
+      className="py-24 lg:py-32 bg-[#0C0819] text-white relative overflow-hidden"
+    >
       {/* Background ambient lighting */}
       <div className="absolute top-1/4 left-1/2 -translate-x-1/2 w-[800px] h-[500px] bg-purple-900/15 rounded-full blur-3xl pointer-events-none" />
 
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
-        <div className="text-center max-w-4xl mx-auto mb-20">
+        <motion.div
+          initial={{ opacity: 0, y: 25 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6 }}
+          className="text-center max-w-4xl mx-auto mb-20"
+        >
           <h2 className="text-3xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight mb-6">
             How We Work:{' '}
             <span className="text-[#FF5722]">How an</span>{' '}
@@ -53,13 +66,18 @@ export const HowWeWorkSection: React.FC = () => {
           <p className="text-slate-300 text-sm sm:text-base leading-relaxed max-w-2xl mx-auto">
             A structured model from discovery to scale that keeps delivery aligned with KPIs, conversion quality, and measurable business impact.
           </p>
-        </div>
+        </motion.div>
 
         {/* Top Row: 4 Cards */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mb-6">
-          {topRow.map((step) => (
-            <div
+          {topRow.map((step, idx) => (
+            <motion.div
               key={step.num}
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5, delay: idx * 0.1 }}
+              whileHover={{ y: -6, transition: { duration: 0.2 } }}
               className="bg-[#140F27]/90 rounded-3xl p-6 sm:p-7 border border-slate-800/80 shadow-lg relative flex flex-col justify-between overflow-hidden hover:border-slate-700 transition-all group"
             >
               <div>
@@ -94,7 +112,7 @@ export const HowWeWorkSection: React.FC = () => {
               <div className="relative pt-6 flex flex-col items-center">
                 {/* Glowing Sphere */}
                 <div
-                  className="w-4 h-4 rounded-full mb-1 relative z-10"
+                  className="w-4 h-4 rounded-full mb-1 relative z-10 group-hover:scale-125 transition-transform"
                   style={{
                     backgroundColor: step.color,
                     boxShadow: `0 0 14px 2px ${step.color}`
@@ -116,15 +134,20 @@ export const HowWeWorkSection: React.FC = () => {
                   />
                 </svg>
               </div>
-            </div>
+            </motion.div>
           ))}
         </div>
 
         {/* Bottom Row: 3 Cards */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 max-w-5xl mx-auto">
-          {bottomRow.map((step) => (
-            <div
+          {bottomRow.map((step, idx) => (
+            <motion.div
               key={step.num}
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5, delay: 0.2 + idx * 0.1 }}
+              whileHover={{ y: -6, transition: { duration: 0.2 } }}
               className="bg-[#140F27]/90 rounded-3xl p-6 sm:p-7 border border-slate-800/80 shadow-lg relative flex flex-col justify-between overflow-hidden hover:border-slate-700 transition-all group"
             >
               <div>
@@ -158,7 +181,7 @@ export const HowWeWorkSection: React.FC = () => {
               {/* Bottom Trajectory Arc & Glowing Sphere */}
               <div className="relative pt-6 flex flex-col items-center">
                 <div
-                  className="w-4 h-4 rounded-full mb-1 relative z-10"
+                  className="w-4 h-4 rounded-full mb-1 relative z-10 group-hover:scale-125 transition-transform"
                   style={{
                     backgroundColor: step.color,
                     boxShadow: `0 0 14px 2px ${step.color}`
@@ -179,10 +202,10 @@ export const HowWeWorkSection: React.FC = () => {
                   />
                 </svg>
               </div>
-            </div>
+            </motion.div>
           ))}
         </div>
       </div>
-    </section>
+    </motion.section>
   );
 };

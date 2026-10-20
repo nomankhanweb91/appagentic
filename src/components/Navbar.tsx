@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { AppagentixLogo } from './BrandLogos';
+import { AppagentixBlackLogo } from './BrandLogos';
 import { ChevronDown, Menu, X, ArrowRight } from 'lucide-react';
 
 interface NavbarProps {
@@ -17,9 +17,9 @@ export const Navbar: React.FC<NavbarProps> = ({ onRequestQuote }) => {
   return (
     <header className="sticky top-0 z-40 w-full bg-white/95 backdrop-blur-md border-b border-slate-100 transition-all">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between gap-8">
-        {/* Brand Zone */}
-        <a href="#" className="flex items-center shrink-0">
-          <AppagentixLogo className="w-8 h-8" />
+        {/* Brand Zone with Black Logo */}
+        <a href="#" className="flex items-center shrink-0 py-1">
+          <AppagentixBlackLogo className="h-8 sm:h-10 w-auto object-contain max-w-[170px] sm:max-w-[220px]" />
         </a>
 
         {/* Desktop Nav Zone */}

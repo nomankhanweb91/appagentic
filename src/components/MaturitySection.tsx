@@ -1,5 +1,6 @@
 import React from 'react';
 import { CheckCircle2, ArrowRight } from 'lucide-react';
+import { motion } from 'motion/react';
 
 interface MaturitySectionProps {
   onPlanMvp: () => void;
@@ -11,10 +12,22 @@ export const MaturitySection: React.FC<MaturitySectionProps> = ({
   onEnterpriseArchitect
 }) => {
   return (
-    <section className="py-20 lg:py-28 bg-white relative overflow-hidden">
+    <motion.section
+      initial={{ opacity: 0, y: 50 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true, margin: "-80px" }}
+      transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
+      className="py-20 lg:py-28 bg-white relative overflow-hidden"
+    >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
-        <div className="text-center max-w-3xl mx-auto mb-16">
+        <motion.div
+          initial={{ opacity: 0, y: 25 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6 }}
+          className="text-center max-w-3xl mx-auto mb-16"
+        >
           <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-purple-50 border border-purple-200/70 mb-5">
             <span className="w-2 h-2 rounded-full bg-[#FF5722]"></span>
             <span className="text-xs font-bold tracking-wider text-purple-900 uppercase">
@@ -32,12 +45,19 @@ export const MaturitySection: React.FC<MaturitySectionProps> = ({
           <p className="text-slate-600 text-base sm:text-lg max-w-2xl mx-auto">
             The team and the process change with the stage you are at. Engineering standards stay the same.
           </p>
-        </div>
+        </motion.div>
 
-        {/* 2 Comparison Cards */}
+        {/* 2 Comparison Cards with staggered animation */}
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-10">
           {/* Card 1: For Startups */}
-          <div className="bg-white rounded-3xl p-8 sm:p-10 border border-slate-200/90 shadow-sm hover:shadow-xl hover:border-purple-200 transition-all flex flex-col justify-between">
+          <motion.div
+            initial={{ opacity: 0, x: -30 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6, delay: 0.2 }}
+            whileHover={{ y: -4 }}
+            className="bg-white rounded-3xl p-8 sm:p-10 border border-slate-200/90 shadow-sm hover:shadow-xl hover:border-purple-200 transition-all flex flex-col justify-between"
+          >
             <div>
               {/* Header */}
               <div className="flex items-center justify-between mb-4">
@@ -93,16 +113,23 @@ export const MaturitySection: React.FC<MaturitySectionProps> = ({
 
               <button
                 onClick={onPlanMvp}
-                className="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl text-xs sm:text-sm font-semibold text-slate-900 bg-gradient-to-r from-orange-100 via-pink-100 to-purple-100 hover:from-orange-200 hover:to-purple-200 transition-all border border-pink-200/60 shadow-sm"
+                className="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl text-xs sm:text-sm font-semibold text-slate-900 bg-gradient-to-r from-orange-100 via-pink-100 to-purple-100 hover:from-orange-200 hover:to-purple-200 transition-all border border-pink-200/60 shadow-sm cursor-pointer hover:scale-[1.02] active:scale-[0.98]"
               >
                 <span>Plan Your MVP</span>
                 <ArrowRight className="w-4 h-4 text-purple-700" />
               </button>
             </div>
-          </div>
+          </motion.div>
 
           {/* Card 2: For Enterprises */}
-          <div className="bg-white rounded-3xl p-8 sm:p-10 border border-slate-200/90 shadow-sm hover:shadow-xl hover:border-purple-200 transition-all flex flex-col justify-between">
+          <motion.div
+            initial={{ opacity: 0, x: 30 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6, delay: 0.3 }}
+            whileHover={{ y: -4 }}
+            className="bg-white rounded-3xl p-8 sm:p-10 border border-slate-200/90 shadow-sm hover:shadow-xl hover:border-purple-200 transition-all flex flex-col justify-between"
+          >
             <div>
               {/* Header */}
               <div className="flex items-center justify-between mb-4">
@@ -158,15 +185,15 @@ export const MaturitySection: React.FC<MaturitySectionProps> = ({
 
               <button
                 onClick={onEnterpriseArchitect}
-                className="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl text-xs sm:text-sm font-semibold text-slate-900 bg-gradient-to-r from-orange-100 via-pink-100 to-purple-100 hover:from-orange-200 hover:to-purple-200 transition-all border border-pink-200/60 shadow-sm"
+                className="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl text-xs sm:text-sm font-semibold text-slate-900 bg-gradient-to-r from-orange-100 via-pink-100 to-purple-100 hover:from-orange-200 hover:to-purple-200 transition-all border border-pink-200/60 shadow-sm cursor-pointer hover:scale-[1.02] active:scale-[0.98]"
               >
                 <span>Talk to an Enterprise Architect</span>
                 <ArrowRight className="w-4 h-4 text-purple-700" />
               </button>
             </div>
-          </div>
+          </motion.div>
         </div>
       </div>
-    </section>
+    </motion.section>
   );
 };

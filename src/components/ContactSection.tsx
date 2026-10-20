@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { Mail, Shield, Zap, CheckCircle, ArrowRight, Check } from 'lucide-react';
+import { motion } from 'motion/react';
 
 interface ContactSectionProps {
   initialService?: string;
@@ -45,10 +46,23 @@ export const ContactSection: React.FC<ContactSectionProps> = ({ initialService }
   };
 
   return (
-    <section id="contact" className="py-20 lg:py-28 bg-[#FAF8FE] relative overflow-hidden">
+    <motion.section
+      id="contact"
+      initial={{ opacity: 0, y: 50 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true, margin: '-80px' }}
+      transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
+      className="py-20 lg:py-28 bg-[#FAF8FE] relative overflow-hidden"
+    >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Top Weekly Engineering Memo Card */}
-        <div className="bg-white rounded-3xl p-8 sm:p-10 border border-slate-200/80 shadow-md mb-20 relative overflow-hidden">
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6 }}
+          className="bg-white rounded-3xl p-8 sm:p-10 border border-slate-200/80 shadow-md mb-20 relative overflow-hidden"
+        >
           {/* Subtle gradient glow in top right */}
           <div className="absolute top-0 right-0 w-80 h-full bg-gradient-to-l from-rose-100/40 via-purple-100/20 to-transparent pointer-events-none" />
 
@@ -86,7 +100,7 @@ export const ContactSection: React.FC<ContactSectionProps> = ({ initialService }
                   />
                   <button
                     type="submit"
-                    className="px-6 py-3 rounded-xl text-sm font-semibold text-white bg-gradient-to-r from-rose-500 to-purple-600 hover:opacity-95 transition-all shadow-md shrink-0"
+                    className="px-6 py-3 rounded-xl text-sm font-semibold text-white bg-gradient-to-r from-rose-500 to-purple-600 hover:opacity-95 transition-all shadow-md shrink-0 cursor-pointer hover:scale-[1.02] active:scale-[0.98]"
                   >
                     Subscribe
                   </button>
@@ -94,12 +108,18 @@ export const ContactSection: React.FC<ContactSectionProps> = ({ initialService }
               )}
             </div>
           </div>
-        </div>
+        </motion.div>
 
         {/* Main Contact Section */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-start">
           {/* Left Column: Guarantees */}
-          <div className="lg:col-span-5 space-y-8">
+          <motion.div
+            initial={{ opacity: 0, x: -30 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+            className="lg:col-span-5 space-y-8"
+          >
             <div>
               <h2 className="text-3xl sm:text-5xl font-extrabold tracking-tight text-slate-900 mb-4">
                 Tell us{' '}
@@ -160,10 +180,16 @@ export const ContactSection: React.FC<ContactSectionProps> = ({ initialService }
                 </div>
               </div>
             </div>
-          </div>
+          </motion.div>
 
           {/* Right Column: Contact Form */}
-          <div className="lg:col-span-7">
+          <motion.div
+            initial={{ opacity: 0, x: 30 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6, delay: 0.2 }}
+            className="lg:col-span-7"
+          >
             <div className="bg-white rounded-3xl p-8 sm:p-10 border border-slate-200/80 shadow-xl relative overflow-hidden">
               {/* Top vibrant gradient border strip */}
               <div className="absolute top-0 left-0 right-0 h-1.5 bg-gradient-to-r from-orange-500 via-rose-500 to-purple-600" />
@@ -189,7 +215,7 @@ export const ContactSection: React.FC<ContactSectionProps> = ({ initialService }
                       setCompany('');
                       setBrief('');
                     }}
-                    className="mt-4 px-6 py-2.5 rounded-xl text-xs font-semibold text-purple-700 bg-purple-50 hover:bg-purple-100 border border-purple-200"
+                    className="mt-4 px-6 py-2.5 rounded-xl text-xs font-semibold text-purple-700 bg-purple-50 hover:bg-purple-100 border border-purple-200 cursor-pointer"
                   >
                     Send Another Note
                   </button>
@@ -267,7 +293,7 @@ export const ContactSection: React.FC<ContactSectionProps> = ({ initialService }
                             type="button"
                             key={opt.range}
                             onClick={() => setBudgetRange(opt.range)}
-                            className={`p-3 rounded-xl text-left border transition-all ${
+                            className={`p-3 rounded-xl text-left border transition-all cursor-pointer ${
                               isSelected
                                 ? 'border-purple-500 bg-purple-50/50 ring-1 ring-purple-500'
                                 : 'border-slate-200 hover:border-slate-300 bg-white'
@@ -290,7 +316,7 @@ export const ContactSection: React.FC<ContactSectionProps> = ({ initialService }
                     <button
                       type="submit"
                       disabled={isSubmitting}
-                      className="w-full py-3.5 px-6 rounded-xl text-sm font-semibold text-white bg-gradient-to-r from-[#FF5722] via-[#E91E63] to-[#8C3BE2] hover:opacity-95 transition-all shadow-lg shadow-purple-500/20 flex items-center justify-center gap-2 active:scale-[0.99]"
+                      className="w-full py-3.5 px-6 rounded-xl text-sm font-semibold text-white bg-gradient-to-r from-[#FF5722] via-[#E91E63] to-[#8C3BE2] hover:opacity-95 transition-all shadow-lg shadow-purple-500/20 flex items-center justify-center gap-2 active:scale-[0.99] cursor-pointer"
                     >
                       <span>{isSubmitting ? 'Submitting...' : 'Submit Now'}</span>
                       <ArrowRight className="w-4 h-4" />
@@ -299,9 +325,9 @@ export const ContactSection: React.FC<ContactSectionProps> = ({ initialService }
                 </form>
               )}
             </div>
-          </div>
+          </motion.div>
         </div>
       </div>
-    </section>
+    </motion.section>
   );
 };

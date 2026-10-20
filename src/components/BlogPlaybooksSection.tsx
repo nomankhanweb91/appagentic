@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { BLOG_POSTS, BlogPost } from '../data/content';
+import { motion, AnimatePresence } from 'motion/react';
 import { ArrowRight, Sparkles } from 'lucide-react';
 
 interface BlogPlaybooksSectionProps {
@@ -19,10 +20,23 @@ export const BlogPlaybooksSection: React.FC<BlogPlaybooksSectionProps> = ({ onOp
   ];
 
   return (
-    <section id="blog" className="py-20 lg:py-28 bg-[#FAF8FE] relative overflow-hidden">
+    <motion.section
+      id="blog"
+      initial={{ opacity: 0, y: 50 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true, margin: '-80px' }}
+      transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
+      className="py-20 lg:py-28 bg-[#FAF8FE] relative overflow-hidden"
+    >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
-        <div className="text-center max-w-3xl mx-auto mb-12">
+        <motion.div
+          initial={{ opacity: 0, y: 25 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6 }}
+          className="text-center max-w-3xl mx-auto mb-12"
+        >
           <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-purple-50 border border-purple-200/70 mb-5">
             <span className="w-2 h-2 rounded-full bg-[#FF5722]"></span>
             <span className="text-xs font-bold tracking-wider text-purple-900 uppercase">
@@ -40,7 +54,7 @@ export const BlogPlaybooksSection: React.FC<BlogPlaybooksSectionProps> = ({ onOp
           <p className="text-slate-600 text-base sm:text-lg max-w-2xl mx-auto">
             Deep dives into autonomous agent workflows, enterprise LLM architectures, zero-downtime migrations, and battle-tested digital product design.
           </p>
-        </div>
+        </motion.div>
 
         {/* Filter Tabs */}
         <div className="flex flex-wrap items-center justify-center gap-2 mb-12">
@@ -50,7 +64,7 @@ export const BlogPlaybooksSection: React.FC<BlogPlaybooksSectionProps> = ({ onOp
               <button
                 key={tab}
                 onClick={() => setActiveFilter(tab)}
-                className={`px-4 py-2 rounded-full text-xs sm:text-sm font-semibold transition-all ${
+                className={`px-4 py-2 rounded-full text-xs sm:text-sm font-semibold transition-all cursor-pointer ${
                   isActive
                     ? 'bg-gradient-to-r from-[#FF5722] via-[#E91E63] to-[#9C27B0] text-white shadow-sm'
                     : 'bg-white text-slate-600 hover:text-slate-900 border border-slate-200/80 hover:border-slate-300'
@@ -62,8 +76,14 @@ export const BlogPlaybooksSection: React.FC<BlogPlaybooksSectionProps> = ({ onOp
           })}
         </div>
 
-        {/* Featured Blueprint Card */}
-        <div className="bg-white rounded-3xl p-6 sm:p-10 border border-slate-200/80 shadow-md mb-12 overflow-hidden">
+        {/* Featured Blueprint Card with motion hover */}
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6 }}
+          className="bg-white rounded-3xl p-6 sm:p-10 border border-slate-200/80 shadow-md mb-12 overflow-hidden hover:shadow-xl transition-shadow"
+        >
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
             {/* Left Blueprint Diagram Graphic */}
             <div className="lg:col-span-6 bg-[#0E0B1A] rounded-2xl p-6 text-white relative overflow-hidden min-h-[300px] sm:min-h-[340px] flex flex-col justify-between border border-purple-950">
@@ -152,7 +172,7 @@ export const BlogPlaybooksSection: React.FC<BlogPlaybooksSectionProps> = ({ onOp
                         'Enterprise adoption of LLMs requires rigorous deterministic verification. In this playbook, we outline how our engineering practice constructs multi-agent orchestrations with bounded evaluation layers, semantic routing fallback cascades, and sub-millisecond vector indexing.'
                     })
                   }
-                  className="px-5 py-2.5 rounded-xl text-xs sm:text-sm font-semibold text-white bg-gradient-to-r from-rose-500 via-pink-500 to-purple-600 hover:opacity-95 transition-all shadow-md shrink-0 flex items-center gap-1.5"
+                  className="px-5 py-2.5 rounded-xl text-xs sm:text-sm font-semibold text-white bg-gradient-to-r from-rose-500 via-pink-500 to-purple-600 hover:opacity-95 transition-all shadow-md shrink-0 flex items-center gap-1.5 cursor-pointer hover:scale-[1.02] active:scale-[0.98]"
                 >
                   <span>Read Full Article</span>
                   <ArrowRight className="w-4 h-4" />
@@ -160,13 +180,18 @@ export const BlogPlaybooksSection: React.FC<BlogPlaybooksSectionProps> = ({ onOp
               </div>
             </div>
           </div>
-        </div>
+        </motion.div>
 
         {/* 3 Article Cards */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-          {BLOG_POSTS.map((post) => (
-            <div
+          {BLOG_POSTS.map((post, idx) => (
+            <motion.div
               key={post.id}
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5, delay: idx * 0.15 }}
+              whileHover={{ y: -6 }}
               className="bg-white rounded-3xl p-6 border border-slate-200/80 shadow-md hover:shadow-xl transition-all flex flex-col justify-between group"
             >
               <div>
@@ -209,16 +234,16 @@ export const BlogPlaybooksSection: React.FC<BlogPlaybooksSectionProps> = ({ onOp
 
                 <button
                   onClick={() => onOpenArticle(post)}
-                  className="text-xs font-bold text-rose-600 hover:text-purple-600 inline-flex items-center gap-1 transition-colors"
+                  className="text-xs font-bold text-rose-600 hover:text-purple-600 inline-flex items-center gap-1 transition-colors cursor-pointer"
                 >
                   <span>Read Article</span>
                   <ArrowRight className="w-3.5 h-3.5" />
                 </button>
               </div>
-            </div>
+            </motion.div>
           ))}
         </div>
       </div>
-    </section>
+    </motion.section>
   );
 };
