@@ -1,6 +1,6 @@
 import React, { useState, useRef, useEffect } from 'react';
 import { AppagentixBlackLogo } from './BrandLogos';
-import { ChevronDown, Menu, X, ArrowRight, CheckCircle2, LayoutGrid } from 'lucide-react';
+import { ChevronDown, Menu, X, ArrowRight } from 'lucide-react';
 import { AnimatePresence, motion } from 'motion/react';
 import {
   SERVICES_MEGA_MENU,
@@ -359,17 +359,32 @@ export const Navbar: React.FC<NavbarProps> = ({ onRequestQuote }) => {
                           transition={{ duration: 0.2 }}
                           className="px-3 pb-4 pt-1 bg-white border-t border-slate-100"
                         >
-                          {/* Mini header badge & title */}
-                          <div className="mb-3 pt-1">
-                            <span className="inline-block text-[10px] font-semibold text-purple-600 bg-purple-50 px-2 py-0.5 rounded-full mb-1">
-                              {section.config.badge}
-                            </span>
-                            <div className="text-sm font-bold text-slate-900">
-                              {section.config.titlePrefix}{' '}
-                              <span className="bg-gradient-to-r from-orange-500 to-purple-600 text-transparent bg-clip-text">
-                                {section.config.titleHighlight}
+                          {/* Mini header badge & title with Read More */}
+                          <div className="mb-3 pt-1 flex items-center justify-between gap-2">
+                            <div>
+                              <span className="inline-block text-[10px] font-semibold text-purple-600 bg-purple-50 px-2 py-0.5 rounded-full mb-1">
+                                {section.config.badge}
                               </span>
+                              <div className="text-sm font-bold text-slate-900">
+                                {section.config.titlePrefix}{' '}
+                                <span className="bg-gradient-to-r from-orange-500 to-purple-600 text-transparent bg-clip-text">
+                                  {section.config.titleHighlight}
+                                </span>
+                              </div>
                             </div>
+                            <a
+                              href={section.config.ctaLink?.hashtag || `#${section.config.id}`}
+                              onClick={(e) => {
+                                e.preventDefault();
+                                handleHashtagNavigation(
+                                  section.config.ctaLink?.hashtag || `#${section.config.id}`
+                                );
+                              }}
+                              className="inline-flex items-center gap-1 px-2.5 py-1 rounded-lg text-[11px] font-semibold text-white bg-gradient-to-r from-purple-600 to-indigo-600 shadow-2xs shrink-0 active:scale-95 transition-all"
+                            >
+                              <span>Read More</span>
+                              <ArrowRight className="w-3 h-3" />
+                            </a>
                           </div>
 
                           {/* Grid of items */}
@@ -405,29 +420,6 @@ export const Navbar: React.FC<NavbarProps> = ({ onRequestQuote }) => {
                               );
                             })}
                           </div>
-
-                          {/* Explore All CTA for Mobile */}
-                          {section.config.exploreAllButton && (
-                            <a
-                              href={section.config.exploreAllButton.hashtag}
-                              onClick={(e) => {
-                                e.preventDefault();
-                                handleHashtagNavigation(
-                                  section.config.exploreAllButton!.hashtag
-                                );
-                              }}
-                              className="mt-3 flex items-center justify-between p-2.5 rounded-xl bg-gradient-to-r from-[#FF3B30] to-[#9333EA] text-white font-semibold text-xs shadow-xs"
-                            >
-                              <div className="flex items-center gap-2">
-                                <LayoutGrid className="w-3.5 h-3.5" />
-                                <span>
-                                  {section.config.exploreAllButton.label}{' '}
-                                  {section.config.exploreAllButton.sublabel}
-                                </span>
-                              </div>
-                              <ArrowRight className="w-3.5 h-3.5" />
-                            </a>
-                          )}
                         </motion.div>
                       )}
                     </AnimatePresence>

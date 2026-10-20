@@ -595,7 +595,6 @@ export const CASE_STUDIES_MEGA_MENU: MegaMenuConfig = {
   items: [
     {
       title: 'Dockline',
-      subtitle: 'Logistics & WMS Systems',
       hashtag: '#case-study-dockline',
       icon: Truck,
       iconBg: 'bg-indigo-50 text-indigo-600 border border-indigo-100',
@@ -603,7 +602,6 @@ export const CASE_STUDIES_MEGA_MENU: MegaMenuConfig = {
     },
     {
       title: 'CareNote AI',
-      subtitle: 'Clinical Dictation & EHR',
       hashtag: '#case-study-carenote',
       icon: FileSpreadsheet,
       iconBg: 'bg-teal-50 text-teal-600 border border-teal-100',
@@ -611,7 +609,6 @@ export const CASE_STUDIES_MEGA_MENU: MegaMenuConfig = {
     },
     {
       title: 'Expo City Dubai',
-      subtitle: 'Autonomous Fleet Dispatch',
       hashtag: '#case-study-expo-city',
       icon: Zap,
       iconBg: 'bg-emerald-50 text-emerald-600 border border-emerald-100',
@@ -619,7 +616,6 @@ export const CASE_STUDIES_MEGA_MENU: MegaMenuConfig = {
     },
     {
       title: 'Keller Williams',
-      subtitle: 'PropTech & Broker CRM',
       hashtag: '#case-study-keller-williams',
       icon: Building2,
       iconBg: 'bg-amber-50 text-amber-600 border border-amber-100',
@@ -627,7 +623,6 @@ export const CASE_STUDIES_MEGA_MENU: MegaMenuConfig = {
     },
     {
       title: 'Vaultwise',
-      subtitle: 'Fintech & Banking Core',
       hashtag: '#case-study-vaultwise',
       icon: CreditCard,
       iconBg: 'bg-blue-50 text-blue-600 border border-blue-100',
@@ -635,7 +630,6 @@ export const CASE_STUDIES_MEGA_MENU: MegaMenuConfig = {
     },
     {
       title: 'Pulseboard',
-      subtitle: 'Remote Patient Telemetry',
       hashtag: '#case-study-pulseboard',
       icon: Heart,
       iconBg: 'bg-rose-50 text-rose-600 border border-rose-100',
@@ -643,7 +637,6 @@ export const CASE_STUDIES_MEGA_MENU: MegaMenuConfig = {
     },
     {
       title: 'Namshi',
-      subtitle: 'High-Conversion Fashion',
       hashtag: '#case-study-namshi',
       icon: ShoppingBag,
       iconBg: 'bg-purple-50 text-purple-600 border border-purple-100',
@@ -651,7 +644,6 @@ export const CASE_STUDIES_MEGA_MENU: MegaMenuConfig = {
     },
     {
       title: 'Tubi Stream',
-      subtitle: 'Media & Video Delivery',
       hashtag: '#case-study-tubi-stream',
       icon: Video,
       iconBg: 'bg-indigo-50 text-indigo-600 border border-indigo-100',
@@ -659,7 +651,6 @@ export const CASE_STUDIES_MEGA_MENU: MegaMenuConfig = {
     },
     {
       title: 'Servly',
-      subtitle: 'On-Demand Marketplace',
       hashtag: '#case-study-servly',
       icon: Store,
       iconBg: 'bg-rose-50 text-rose-600 border border-rose-100',
@@ -667,7 +658,6 @@ export const CASE_STUDIES_MEGA_MENU: MegaMenuConfig = {
     },
     {
       title: 'Majid Al Futtaim',
-      subtitle: 'Unified Omnichannel Malls',
       hashtag: '#case-study-majid-al-futtaim',
       icon: ShoppingBag,
       iconBg: 'bg-amber-50 text-amber-600 border border-amber-100',
@@ -675,7 +665,6 @@ export const CASE_STUDIES_MEGA_MENU: MegaMenuConfig = {
     },
     {
       title: 'Isuzu Connect',
-      subtitle: 'Automotive Fleet IoT',
       hashtag: '#case-study-isuzu',
       icon: Car,
       iconBg: 'bg-blue-50 text-blue-600 border border-blue-100',
@@ -683,7 +672,6 @@ export const CASE_STUDIES_MEGA_MENU: MegaMenuConfig = {
     },
     {
       title: 'Afiat Health',
-      subtitle: 'Digital Clinic & Triage',
       hashtag: '#case-study-afiat-health',
       icon: ShieldCheck,
       iconBg: 'bg-sky-50 text-sky-600 border border-sky-100',
