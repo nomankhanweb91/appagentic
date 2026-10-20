@@ -1,6 +1,7 @@
 import React from 'react';
 import { ArrowRight, ArrowUpRight } from 'lucide-react';
 import { motion } from 'motion/react';
+import { getAssetUrl } from '../utils/assets';
 import {
   MixpanelLogo,
   ClaudePartnerLogo,
@@ -43,7 +44,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onRequestQuote }) => {
       {/* Background Graphic: User's high-resolution Hero Banner image */}
       <div className="absolute inset-0 z-0 pointer-events-none overflow-hidden">
         <img
-          src="/assets/aistudio/hero_banner_e6083244.png"
+          src={getAssetUrl('assets/aistudio/hero_banner_e6083244.png')}
           alt="AI Native Product Engineering Background"
           className="w-full h-full object-cover object-center lg:object-[center_35%] scale-105 opacity-55 mix-blend-screen filter contrast-125"
           referrerPolicy="no-referrer"

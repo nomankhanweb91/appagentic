@@ -1,4 +1,5 @@
 import React from 'react';
+import { getAssetUrl } from '../utils/assets';
 
 // Appagentix Black Logo for Header / Light backgrounds
 export const AppagentixBlackLogo: React.FC<{ className?: string }> = ({
@@ -6,7 +7,7 @@ export const AppagentixBlackLogo: React.FC<{ className?: string }> = ({
 }) => {
   return (
     <img
-      src="/assets/aistudio/Agentic_black_logo_878668b7.png"
+      src={getAssetUrl('assets/aistudio/Agentic_black_logo_878668b7.png')}
       alt="Appagentix"
       className={className}
     />
@@ -19,7 +20,7 @@ export const AppagentixWhiteLogo: React.FC<{ className?: string }> = ({
 }) => {
   return (
     <img
-      src="/assets/aistudio/Agentic_White-logo_2529adb7.png"
+      src={getAssetUrl('assets/aistudio/Agentic_White-logo_2529adb7.png')}
       alt="Appagentix"
       className={className}
     />
