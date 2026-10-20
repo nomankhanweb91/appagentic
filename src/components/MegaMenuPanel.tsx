@@ -1,6 +1,6 @@
 import React from 'react';
 import { MegaMenuConfig } from '../data/megaMenuData';
-import { CheckCircle2, ArrowRight, LayoutGrid } from 'lucide-react';
+import { ArrowRight, LayoutGrid } from 'lucide-react';
 import { motion } from 'motion/react';
 
 interface MegaMenuPanelProps {
@@ -22,8 +22,8 @@ export const MegaMenuPanel: React.FC<MegaMenuPanelProps> = ({
       transition={{ duration: 0.18, ease: [0.16, 1, 0.3, 1] }}
       className="w-full bg-white border-b border-slate-200 shadow-[0_20px_45px_-12px_rgba(15,23,42,0.12)] text-slate-900"
     >
-      {/* Content strictly constrained inside standard max-w-7xl container with compact vertical height */}
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 sm:py-5 lg:py-5">
+      {/* Content spans full width matching header menu padding with compact vertical height */}
+      <div className="w-full px-4 sm:px-6 lg:px-8 xl:px-12 py-4 sm:py-5 lg:py-5">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-8 items-start">
           {/* Left Column (Brand & Standard Highlight) */}
           <div className="lg:col-span-4 flex flex-col justify-between pr-0 lg:pr-5 border-b lg:border-b-0 lg:border-r border-slate-100 pb-4 lg:pb-0">
@@ -180,36 +180,6 @@ export const MegaMenuPanel: React.FC<MegaMenuPanelProps> = ({
                   </a>
                 )}
               </div>
-            </div>
-
-            {/* Bottom Trust & Consultation Row (Compact) */}
-            <div className="pt-2.5 mt-2.5 border-t border-slate-100 flex flex-col sm:flex-row sm:items-center justify-between gap-2 text-[11px]">
-              {config.trustBadges && (
-                <div className="flex flex-wrap items-center gap-x-3.5 gap-y-1 text-slate-600 font-medium">
-                  {config.trustBadges.map((badge, idx) => (
-                    <span key={idx} className="inline-flex items-center gap-1.5 text-slate-700">
-                      <CheckCircle2 className="w-3 h-3 text-emerald-500 shrink-0" />
-                      <span>{badge}</span>
-                    </span>
-                  ))}
-                </div>
-              )}
-
-              {config.ctaLink && (
-                <button
-                  onClick={() => {
-                    if (onRequestQuote) {
-                      onRequestQuote();
-                    } else {
-                      onItemClick(config.ctaLink!.hashtag);
-                    }
-                  }}
-                  className="inline-flex items-center gap-1 font-semibold text-purple-700 hover:text-purple-800 transition-colors underline-offset-4 hover:underline text-left cursor-pointer shrink-0"
-                >
-                  <span>{config.ctaLink.text}</span>
-                  <ArrowRight className="w-3 h-3" />
-                </button>
-              )}
             </div>
           </div>
         </div>
