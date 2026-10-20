@@ -59,7 +59,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onRequestQuote }) => {
       <div className="absolute -top-24 -right-24 w-96 h-96 bg-purple-500/20 rounded-full blur-2xl pointer-events-none" />
 
       {/* Main Content Container - 100% Full Width */}
-      <div className="relative z-10 w-full px-4 sm:px-6 lg:px-8 xl:px-12 pt-16 pb-10 lg:pt-24 lg:pb-14">
+      <div className="relative z-10 w-full px-4 sm:px-6 lg:px-8 xl:px-12 pt-14 pb-6 lg:pt-18 lg:pb-8">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
@@ -71,7 +71,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onRequestQuote }) => {
             initial={{ opacity: 0, scale: 0.9 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ delay: 0.2, duration: 0.5 }}
-            className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-slate-900/60 border border-white/20 backdrop-blur-md mb-6 sm:mb-8 shadow-sm"
+            className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-slate-900/60 border border-white/20 backdrop-blur-md mb-5 sm:mb-6 shadow-sm"
           >
             <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
             <span className="text-xs font-semibold tracking-wider text-slate-100 uppercase">
@@ -84,7 +84,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onRequestQuote }) => {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.3, duration: 0.7 }}
-            className="text-3xl sm:text-5xl lg:text-[54px] font-extrabold tracking-tight text-white leading-[1.12] mb-5"
+            className="text-3xl sm:text-5xl lg:text-[54px] font-extrabold tracking-tight text-white leading-[1.12] mb-4 sm:mb-5"
           >
             Build Smarter Products.{' '}
             <span className="block text-white/95">Engineer What's Next.</span>
@@ -95,7 +95,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onRequestQuote }) => {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.45, duration: 0.7 }}
-            className="text-base sm:text-lg lg:text-xl text-slate-100/95 leading-relaxed max-w-2xl font-normal mb-10"
+            className="text-base sm:text-lg lg:text-xl text-slate-100/95 leading-relaxed max-w-2xl font-normal mb-7 sm:mb-8"
           >
             Appagentix combines product strategy, software engineering and artificial
             intelligence to help businesses build, modernize and scale digital products.
@@ -128,8 +128,8 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onRequestQuote }) => {
       </div>
 
       {/* Bottom Social Proof Bar - 100% Full Width across the entire screen */}
-      <div className="relative z-10 w-full mt-10 sm:mt-14 pt-8 border-t border-white/15 pb-16 lg:pb-20">
-        <div className="w-full px-4 sm:px-6 lg:px-8 xl:px-12 flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-6">
+      <div className="relative z-10 w-full mt-6 sm:mt-8 pt-7 sm:pt-8 border-t border-white/15 pb-12 lg:pb-14">
+        <div className="w-full px-4 sm:px-6 lg:px-8 xl:px-12 flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-4 sm:mb-5">
           <div>
             <p className="text-xl sm:text-2xl font-bold text-white tracking-tight">
               Trusted, Certified & Recognized Globally
